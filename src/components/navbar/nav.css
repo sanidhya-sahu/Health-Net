@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.navWrap {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    position: absolute;
+    z-index: 1000000;
+}
+
+.nav {
+    background-color: #25434d;
+    width: 90vw;
+    height: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: "Montserrat";
+}
+.navHead{
+    font-size: 20px;
+}
+.navHead>span {
+    font-family: "Cookie", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+}
+
+.nav>.center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    font-size: 16px;
+    font-family: "Montserrat";
+}
+
+.nav>.center>a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav>.right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#login {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: "Montserrat";
+    width: 5vw;
+    cursor: pointer;
+    font-size: 16px;
+}
+#emergency{
+    border: none;
+    background-color: #a6e9e0;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: "Montserrat";
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+#emergency:active{
+    background-color: #86ebdd;
+}

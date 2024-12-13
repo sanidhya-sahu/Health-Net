@@ -1,0 +1,135 @@
+.homeWrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebf5f7;
+    position: relative;
+}
+
+.content {
+    width: 50%;
+    position: relative;
+}
+
+.punchLine {
+    color: #25434d;
+    font-size: 4rem;
+    padding-left: 75px;
+    font-family: "Montserrat";
+    width: 86%;
+    font-weight: 600;
+    line-height: 75px;
+}
+
+.details {
+    color: #25434d;
+    font-family: 'Montserrat';
+    width: 86%;
+    padding-left: 75px;
+    font-weight: 500;
+    /* letter-spacing: 1px; */
+    /* word-spacing: 2px; */
+    margin-top: 20px;
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footdetails {
+    position: absolute;
+    bottom: -100px;
+    color: #25434d;
+    font-family: 'Montserrat';
+    width: 86%;
+    padding-left: 75px;
+    font-weight: 500;
+    margin-top: 20px;
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.heroImage {
+    width: 50%;
+    position: relative;
+    height: 100%;
+}
+
+.heroImage>img {
+    width: 700px;
+    position: absolute;
+    bottom: 50px;
+    left: -20px;
+}
+
+.services {
+    position: absolute;
+    bottom: -160px;
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceBox {
+    width: 20%;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+
+.serviceName {
+    color: #25434d;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 20px;
+}
+.serviceDetails{
+    color: #25434d;
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+.serviceSvg {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dedede;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.serviceBox1 {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.serviceBox4 {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.serviceBox:hover{
+    .serviceSvg{
+        background: #a6e9e0;
+    }
+    background-color: #25434d;
+    .serviceName{
+        color: white;
+    }
+    .serviceDetails{
+        color: white;
+    }
+    .arrow{
+        filter: invert(1) hue-rotate(154deg);
+    }
+}
