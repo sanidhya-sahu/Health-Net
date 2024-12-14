@@ -16,11 +16,11 @@ function chat() {
         document.getElementById("response").innerText = data.message
       }
       else if(data.status == "success"){
-        document.getElementById("response").innerText = 
-       `Medicine Name : ${data.medicine_name}
-        Uses : ${data.uses}
-        Composition : ${data.composition}
-        Side Effects : ${data.side_effects}
+        document.getElementById("response").innerHTML = 
+       `<span><span style="color:#00ac94">Medicine Name</span> : ${data.medicine_name}</span>
+        <span><span style="color:#00ac94">Uses</span> : ${data.uses}</span>
+        <span><span style="color:#00ac94">Composition</span> : ${data.composition}</span>
+        <span><span style="color:#00ac94">Side Effects</span> : ${data.side_effects}</span>
         `
       }
     })

@@ -84,4 +84,8 @@
     word-spacing: 2px;
     /* line-height: 25px; */ 
     transition: all 500ms ease;
+    flex-direction: column;
+}
+.chatPoint{
+    color: #86ebdd;
 }
