@@ -7,7 +7,7 @@ function chat() {
     document.getElementById("responseBox").style.display = "flex"
     document.getElementById("respLoader").style.display = "flex"
     document.getElementById("response").style.display = "none"
-    fetch(`https://medcheck-model.onrender.com/med?query=${input}`)
+    fetch(`https://med-check-health-net-api-7682.vercel.app/med?query=${input}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById("response").style.display = "flex"
