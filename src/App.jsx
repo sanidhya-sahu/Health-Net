@@ -3,12 +3,14 @@ import Navbar from './components/navbar/navbar'
 import Home from './components/home/home'
 import Chat from './components/chat/chat'
 import Firstaid from './components/firstaid/firstaid'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./App.css"
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route
           path='/'
