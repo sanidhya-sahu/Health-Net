@@ -5,7 +5,9 @@ import pharmacySvg from '../../assets/pharmacy.svg'
 import chatSvg from '../../assets/chat.svg'
 import mentalSvg from '../../assets/mental.svg'
 import videoSvg from '../../assets/video.svg'
+import { useNavigate } from "react-router-dom";
 function home() {
+    const navigate = useNavigate();
     return (
         <div className='homeWrap'>
             <div className="content">
@@ -25,7 +27,7 @@ function home() {
                     </div>
                     <div className="arrow"><img src={arrowSvg} alt="" /></div>
                 </div>
-                <div className="serviceBox serviceBox2">
+                <div className="serviceBox serviceBox2" onClick={()=>{navigate('/first-aid')}} id='frist-aid-box'>
                     <div className="serviceSvg"><img src={videoSvg} alt="" /></div>
                     <div>
                         <div className="serviceName">Videos for First-Aid</div>
