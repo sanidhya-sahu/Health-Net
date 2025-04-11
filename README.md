@@ -1,8 +1,14 @@
-# React + Vite
+# Health Net
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HealthNet is an AI-powered platform designed to make healthcare accessible, reliable, and efficient. Our mission is to leverage technology to provide users with real-time, data-driven medical assistance and resources, empowering them to manage their health effectively.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Implemented Features
+- Medicine check up caht bot
+- First Aid Help
+## Upcoming Features
+- Mental health help
+- Emergency contact to nearest hospital
+- Skin disease prediction by ML
+- Local Pharmacy contact
+- Workout plans for physical health
+- Menstrual cycle tracker
