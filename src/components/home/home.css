@@ -6,6 +6,8 @@
     align-items: center;
     background-color: #ebf5f7;
     position: relative;
+    /* overflow-x: hidden; */
+    flex-direction: row;
 }
 
 .content {
@@ -57,8 +59,8 @@
     height: 100%;
 }
 
-.heroImage>img {
-    width: 700px;
+.heroImage > img {
+    width: 100%;
     position: absolute;
     bottom: 50px;
     left: -20px;
@@ -92,11 +94,13 @@
     font-weight: 700;
     font-size: 20px;
 }
-.serviceDetails{
+
+.serviceDetails {
     color: #25434d;
     font-family: 'Montserrat';
     margin-top: 10px;
 }
+
 .serviceSvg {
     width: 30px;
     height: 30px;
@@ -118,18 +122,161 @@
     border-bottom-right-radius: 15px;
 }
 
-.serviceBox:hover{
-    .serviceSvg{
-        background: #a6e9e0;
-    }
+.serviceBox:hover {
     background-color: #25434d;
-    .serviceName{
-        color: white;
+}
+
+.serviceBox:hover .serviceSvg {
+    background: #a6e9e0;
+}
+
+.serviceBox:hover .serviceName {
+    color: white;
+}
+
+.serviceBox:hover .serviceDetails {
+    color: white;
+}
+
+.serviceBox:hover .arrow {
+    filter: invert(1) hue-rotate(154deg);
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 1024px) {
+    .punchLine {
+        font-size: 3.5rem;
+        line-height: 65px;
+        padding-left: 50px;
     }
-    .serviceDetails{
-        color: white;
+    
+    .details, .footdetails {
+        padding-left: 50px;
+        font-size: 18px;
     }
-    .arrow{
-        filter: invert(1) hue-rotate(154deg);
+    
+    .serviceBox {
+        padding: 15px;
+    }
+    
+    .serviceName {
+        font-size: 18px;
+    }
+    
+    .serviceDetails {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .homeWrap {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 12vh;
+    }
+    
+    .content, .heroImage {
+        width: 90%;
+        /* padding-left: 10px; */
+    }
+    
+    .punchLine {
+        font-size: 2.5rem;
+        line-height: 50px;
+        padding-left: 0px;
+        width: 100%;
+    }
+    
+    .details {
+        padding-left: 0px;
+        width: 100%;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    
+    .footdetails {
+        position: relative;
+        bottom: 0;
+        padding-left: 0px;
+        width: 100%;
+        margin-top: 40px;
+        font-size: 18px;
+    }
+    
+    .heroImage {
+        height: 300px;
+        margin-top: 30px;
+    }
+    
+    .heroImage > img {
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
+    
+    .services {
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        bottom: 0;
+    }
+    
+    .serviceBox {
+        width: 90%;
+        margin-bottom: 15px;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .serviceBox > div:nth-child(2) {
+        flex: 1;
+        padding-left: 15px;
+    }
+    
+    .serviceBox1 {
+        border-radius: 15px 15px 0 0;
+    }
+    
+    .serviceBox4 {
+        border-radius: 0 0 15px 15px;
+    }
+    
+    .serviceBox2, .serviceBox3 {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .punchLine {
+        font-size: 2rem;
+        line-height: 40px;
+    }
+    
+    .details, .footdetails {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .footdetails{
+        display: none;
+    }
+    
+    .heroImage {
+        height: 210px;
+    }
+    
+    .services{
+        width: 88vw;
+    }
+
+    .serviceName {
+        font-size: 16px;
+    }
+    
+    .serviceDetails {
+        font-size: 12px;
     }
 }

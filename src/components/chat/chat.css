@@ -59,6 +59,8 @@
     gap: 20px;
     display: none;
     transition: all 500ms ease;
+    flex-direction: column;
+
 }
 .chatLogo {
     width: 45px;
@@ -88,4 +90,126 @@
 }
 .chatPoint{
     color: #86ebdd;
+}
+
+.chatWrap {
+    width: 100vw;
+    height: auto;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 15%;
+    gap: 35px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.chatHead {
+    color: #25434d;
+    font-size: 4rem;
+    font-family: "Montserrat";
+    text-align: center;
+}
+
+.searchbar {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#input-medicine {
+    border: 2px solid #25434d81;
+    width: 100%;
+    max-width: 60vw;
+    padding: 15px;
+    border-radius: 40px;
+    font-family: 'Montserrat';
+    padding-left: 35px;
+    font-size: 16px;
+    flex: 1;
+}
+
+.responseBox {
+    width: 100%;
+    max-width: 70vw;
+    height: auto;
+    min-height: 35vh;
+    display: none;
+    gap: 20px;
+    flex-wrap: wrap;
+    transition: all 500ms ease;
+}
+
+.response {
+    width: 100%;
+    max-width: 58vw;
+    color: #25434d;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 20px;
+    word-spacing: 2px;
+    transition: all 500ms ease;
+    flex-direction: column;
+    line-height: 125%;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .chatHead {
+        font-size: 2.5rem;
+    }
+    
+    .searchbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #input-medicine {
+        max-width: 90%;
+    }
+    
+    #search {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .responseBox {
+        max-width: 90%;
+    }
+    
+    .response {
+        max-width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chatHead {
+        font-size: 2rem;
+    }
+    
+    .chatWrap {
+        margin-top: 20%;
+    }
+    
+    #input-medicine {
+        padding: 12px;
+        padding-left: 20px;
+        font-size: 14px;
+        max-width: 75vw;
+    }
+    
+    #search {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .response {
+        font-size: 16px;
+    }
 }

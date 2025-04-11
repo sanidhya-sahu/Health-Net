@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Footer.css';
 import facebook from '../../assets/facebook.svg'
 import linkedin from '../../assets/linkedin.svg'
@@ -6,6 +6,23 @@ import insta from '../../assets/insta.svg'
 import x from '../../assets/x.svg'
 
 const Footer = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        // Initial check
+        handleResize();
+
+        // Add listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -25,7 +42,7 @@ const Footer = () => {
                         <a href="#" className="social-icon"><div className="serviceSvg footersvg"><img src={insta} alt="" /></div></a>
                     </div>
                 </div>
-                <div className="footer-links-section">
+                <div hidden={isMobile?true:false} className="footer-links-section">
 
                 </div>
 
@@ -57,7 +74,7 @@ const Footer = () => {
 
                 <div className="footer-links-section">
                     <h3>Contact</h3>
-                    <p>contact@healthnet.com</p>
+                    {/* <p>contact@healthnet.com</p> */}
                     <br />
                     <p>(+91) 9552875504</p>
                 </div>

@@ -56,8 +56,8 @@ function chat() {
       </div>
       <div id='responseBox' className="responseBox">
         <div className="chatLogo">H</div>
-        <div id='respLoader' className="loader" style={laoderStyle} ><Loader></Loader></div>
         <div id='response' className="response"></div>
+        <div id='respLoader' className="loader" style={laoderStyle} ><Loader></Loader></div>
       </div>
     </div>
   )

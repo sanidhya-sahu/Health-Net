@@ -69,6 +69,13 @@
     }
 }
 
+@media (max-width: 768px){
+
+    .footer-links-section {
+        flex: 1 0 40%;
+    }
+}
+
 @media (min-width: 992px) {
     .footer-links-section {
         flex: 0 0 15%;

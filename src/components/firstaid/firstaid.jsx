@@ -1,10 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './firstaid.css'
 import Navbar from '../navbar/navbar'
 import Footer from '../Footer/Footer';
 
 function FirstAid() {
     const [openVideo, setOpenVideo] = useState(null);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    
+    // Track window resize for responsive adjustments
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const videoTitles = [
         "How to do the primary survey",
         "How to do CPR on an adult",
@@ -53,20 +67,39 @@ function FirstAid() {
         "GmqXqwSV3bo"  // The recovery position
     ];
 
+    // Use appropriate embed parameters for responsive behavior
     const getEmbedUrl = (videoId) => {
         return `https://www.youtube.com/embed/${videoId}`;
     };
+    
     const handleVideoClick = (videoId) => {
         setOpenVideo(videoId);
+        // Prevent background scrolling when modal is open
+        document.body.style.overflow = 'hidden';
     };
+    
     const closeVideo = () => {
         setOpenVideo(null);
+        // Restore scrolling when modal is closed
+        document.body.style.overflow = 'auto';
     };
+
+    // Handle keyboard events for accessibility
+    useEffect(() => {
+        const handleEsc = (event) => {
+            if (event.keyCode === 27) closeVideo();
+        };
+        
+        window.addEventListener('keydown', handleEsc);
+        return () => {
+            window.removeEventListener('keydown', handleEsc);
+        };
+    }, []);
 
     return (
         <>
             <div className='firstaid-wrap'>
-                <Navbar></Navbar>
+                <Navbar />
                 <div className="firstaid-detail">
                     <div className="firstaid-head">
                         First Aid
@@ -85,7 +118,11 @@ function FirstAid() {
                                 onClick={() => handleVideoClick(videoNum)}
                             >
                                 <div className="thumbnail">
-                                    <img src={`/firstaid-vid-thumbs/${videoNum}.webp`} alt="" />
+                                    <img 
+                                        src={`/firstaid-vid-thumbs/${videoNum}.webp`} 
+                                        alt={`Thumbnail for ${title}`}
+                                        loading="lazy" // For better performance
+                                    />
                                 </div>
                                 <div className="vidtitle">{title}</div>
                             </div>
@@ -96,7 +133,11 @@ function FirstAid() {
                 {openVideo && (
                     <div className="video-popover-overlay" onClick={closeVideo}>
                         <div className="video-popover-content" onClick={(e) => e.stopPropagation()}>
-                            <button className="video-popover-close" onClick={closeVideo}>×</button>
+                            <button 
+                                className="video-popover-close" 
+                                onClick={closeVideo}
+                                aria-label="Close video"
+                            >×</button>
                             <div className="video-popover-title">{videoTitles[openVideo - 1]}</div>
                             <iframe
                                 width="100%"
@@ -111,7 +152,7 @@ function FirstAid() {
                     </div>
                 )}
             </div>
-            <Footer></Footer>
+            <Footer />
         </>
     )
 }
