@@ -68,6 +68,12 @@
     gap: 10px;
 }
 
+.emergencyIcon>img{
+    filter: invert(1);
+    width: 25px;
+    padding-right: 20px;
+}
+
 #login {
     background: transparent;
     border: none;
@@ -105,7 +111,9 @@
     transition: transform 0.3s ease;
     -webkit-tap-highlight-color: transparent;
 }
-
+.mobile-menu-button>img{
+    width: 25px;
+}
 
 .mobile-menu-button:hover {
     transform: scale(1.1);
@@ -167,6 +175,8 @@
     .nav>.center.active>a {
         opacity: 1;
         transform: translateY(0);
+        font-weight: 700;
+        text-align: justify;
     }
     
     .nav>.center>a:nth-child(1) {
