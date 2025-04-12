@@ -52,16 +52,18 @@
 #search:active {
     background-color: #86ebdd;
 }
-.responseBox{
+
+.responseBox {
     width: 70vw;
     height: 45vh;
     /* display: flex; */
     gap: 20px;
     display: none;
     transition: all 500ms ease;
-    flex-direction: column;
+    /* flex-direction: column; */
 
 }
+
 .chatLogo {
     width: 45px;
     height: 45px;
@@ -77,18 +79,20 @@
     border-radius: 37px;
     transition: all 500ms ease;
 }
-.response{
+
+.response {
     width: 58vw;
     color: #25434d;
     font-family: "Montserrat";
     font-weight: 500;
     font-size: 20px;
     word-spacing: 2px;
-    /* line-height: 25px; */ 
+    /* line-height: 25px; */
     transition: all 500ms ease;
     flex-direction: column;
 }
-.chatPoint{
+
+.chatPoint {
     color: #86ebdd;
 }
 
@@ -141,7 +145,7 @@
     min-height: 35vh;
     display: none;
     gap: 20px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     transition: all 500ms ease;
 }
 
@@ -154,7 +158,6 @@
     font-size: 20px;
     word-spacing: 2px;
     transition: all 500ms ease;
-    flex-direction: column;
     line-height: 125%;
 }
 
@@ -163,25 +166,25 @@
     .chatHead {
         font-size: 2.5rem;
     }
-    
+
     .searchbar {
         flex-direction: column;
         align-items: center;
     }
-    
+
     #input-medicine {
         max-width: 90%;
     }
-    
+
     #search {
         width: 100%;
         max-width: 200px;
     }
-    
+
     .responseBox {
         max-width: 90%;
     }
-    
+
     .response {
         max-width: 100%;
         font-size: 16px;
@@ -192,24 +195,152 @@
     .chatHead {
         font-size: 2rem;
     }
-    
+
     .chatWrap {
         margin-top: 20%;
     }
-    
+
     #input-medicine {
         padding: 12px;
         padding-left: 20px;
         font-size: 14px;
         max-width: 75vw;
     }
-    
+
     #search {
         padding: 12px;
         font-size: 14px;
     }
+
+    .chatLogo {
+        height: 35px;
+        font-size: 28px;
+        max-width: 35px;
+        margin-bottom: 10px;
+    }
+
+    .response {
+        font-size: 16px;
+        flex-direction: column;
+    }
+}
+
+
+
+
+/* xsa */
+
+
+.responseBox {
+    width: 100%;
+    max-width: 70vw;
+    height: auto;
+    min-height: 35vh;
+    display: none;
+    gap: 20px;
+    transition: all 500ms ease;
+    background-color: #f5f9fa;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(37, 67, 77, 0.1);
+    border: 1px solid #e0eef0;
+    margin-bottom: 20px;
+}
+
+.responseContainer {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.chatLogo {
+    width: 50px;
+    height: 50px;
+    font-family: "Cookie", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    background-color: #25434d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 50%;
+    transition: all 500ms ease;
+    flex-shrink: 0;
+}
+
+.response {
+    width: 100%;
+    color: #25434d;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 20px;
+    word-spacing: 2px;
+    transition: all 500ms ease;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.medicine-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0eef0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #00ac94;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    color: #25434d;
+}
+
+@media screen and (max-width: 768px) {
+    .responseBox {
+        max-width: 90%;
+        padding: 20px;
+    }
     
     .response {
         font-size: 16px;
+    }
+    
+    .chatLogo {
+        height: 35px;
+        font-size: 28px;
+        max-width: 35px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .responseBox {
+        padding: 15px;
+    }
+    
+    .responseContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+    .info-row {
+        padding-bottom: 10px;
     }
 }

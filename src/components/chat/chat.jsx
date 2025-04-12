@@ -17,28 +17,50 @@ function chat() {
     });
   }
   function getdata() {
-    var input = document.getElementById("input-medicine").value
-    document.getElementById("responseBox").style.display = "flex"
-    document.getElementById("respLoader").style.display = "flex"
-    document.getElementById("response").style.display = "none"
+    var input = document.getElementById("input-medicine").value;
+    document.getElementById("responseBox").style.display = "flex";
+    document.getElementById("respLoader").style.display = "flex";
+    document.getElementById("responseContainer").style.display = "none";
+    
     fetch(`https://med-check-health-net-api-7682.vercel.app/med?query=${input}`)
       .then(response => response.json())
       .then(data => {
-        document.getElementById("response").style.display = "flex"
-        document.getElementById("respLoader").style.display = "none"
+        document.getElementById("responseContainer").style.display = "flex";
+        document.getElementById("respLoader").style.display = "none";
+        
         if (data.status == "no_match") {
-          document.getElementById("response").innerText = data.message
+          document.getElementById("response").innerHTML = `
+            <div class="medicine-info">
+              <div class="info-row">
+                <span>${data.message}</span>
+              </div>
+            </div>
+          `;
         }
         else if (data.status == "success") {
-          document.getElementById("response").innerHTML =
-            `<span><span style="color:#00ac94">Medicine Name</span> : ${data.medicine_name}</span>
-        <span><span style="color:#00ac94">Uses</span> : ${data.uses}</span>
-        <span><span style="color:#00ac94">Composition</span> : ${data.composition}</span>
-        <span><span style="color:#00ac94">Side Effects</span> : ${data.side_effects}</span>
-        `
+          document.getElementById("response").innerHTML = `
+            <div class="medicine-info">
+              <div class="info-row">
+                <span class="info-label">Medicine Name</span>
+                <span class="info-value">${data.medicine_name}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Uses</span>
+                <span class="info-value">${data.uses}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Composition</span>
+                <span class="info-value">${data.composition}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Side Effects</span>
+                <span class="info-value">${data.side_effects}</span>
+              </div>
+            </div>
+          `;
         }
       })
-      .catch(err => { console.log(err) })
+      .catch(err => { console.log(err) });
   }
   const laoderStyle = {
     width: "45px",
@@ -51,16 +73,21 @@ function chat() {
     <div className='chatWrap'>
       <div className="chatHead">Get to know about your medicines.</div>
       <div className="searchbar">
-        <input type="text" name="medicine" id="input-medicine" onfocusout={() => { unbindKey() }} onFocus={() => { bindKey() }} placeholder='Enter your medicine name.' />
-        <button id='search' onClick={() => { getdata() }} >Search</button>
+        <input type="text" name="medicine" id="input-medicine" 
+          onBlur={() => { unbindKey() }} 
+          onFocus={() => { bindKey() }} 
+          placeholder='Enter your medicine name.' />
+        <button id='search' onClick={() => { getdata() }}>Search</button>
       </div>
       <div id='responseBox' className="responseBox">
-        <div className="chatLogo">H</div>
-        <div id='response' className="response"></div>
-        <div id='respLoader' className="loader" style={laoderStyle} ><Loader></Loader></div>
+        <div id="respLoader" className="loader" style={laoderStyle}><Loader></Loader></div>
+        <div id="responseContainer" className="responseContainer" style={{display: 'none'}}>
+          <div className="chatLogo">H</div>
+          <div id='response' className="response"></div>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default chat

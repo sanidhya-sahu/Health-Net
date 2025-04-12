@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './firstaid.css'
+import './mental.css'
 import Navbar from '../navbar/navbar'
 import Footer from '../Footer/Footer';
 
@@ -8,171 +8,148 @@ function FirstAid() {
     const [activeCategory, setActiveCategory] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    
-    // Define categories for the first aid videos
+
+    // Video categories for filtering
     const categories = {
         'all': 'All Videos',
-        'emergency': 'Emergency Response',
-        'injuries': 'Injuries & Wounds',
-        'medical': 'Medical Emergencies',
-        'techniques': 'First Aid Techniques'
+        'disorders': 'Mental Disorders',
+        'therapy': 'Therapy & Treatment',
+        'wellness': 'Wellness & Self-Care',
+        'psychology': 'Psychology'
     };
-    
-    // Add category information to video objects
+
+    // Add category tags to videos
     const videos = {
-        "ea1RJUOiNfQ": {
-            title: "How to do the primary survey",
-            category: "emergency",
-            thumbIndex: 1
+        "z-IR48Mb3W0": {
+            title: "What is depression?",
+            category: "disorders"
         },
-        "BQNNOh8c8ks": {
-            title: "How to do CPR on an adult",
-            category: "emergency",
-            thumbIndex: 2
+        "DhlRgwdDc-E": {
+            title: "Debunking the myths of OCD",
+            category: "disorders"
         },
-        "PhH9a0kIwmk": {
-            title: "What to do if someone has a stroke",
-            category: "medical",
-            thumbIndex: 3
+        "RrWBhVlD1H8": {
+            title: "What is bipolar disorder?",
+            category: "disorders"
         },
-        "b2ieb8BZJuY": {
-            title: "How to treat poisoning",
-            category: "medical",
-            thumbIndex: 4
+        "b_n9qegR7C4": {
+            title: "The psychology of post-traumatic stress disorder",
+            category: "disorders"
         },
-        "ddHKwkMwNyI": {
-            title: "How to help someone who's fainted",
-            category: "medical",
-            thumbIndex: 5
+        "ZQUxL4Jm1Lo": {
+            title: "What is imposter syndrome and how can you combat it?",
+            category: "psychology"
         },
-        "NxO5LvgqZe0": {
-            title: "How to treat severe bleeding",
-            category: "injuries",
-            thumbIndex: 6
+        "hyg7lcU4g8E": {
+            title: "Does stress affect your memory?",
+            category: "psychology"
         },
-        "hdVKpUR513M": {
-            title: "How to treat an asthma attack",
-            category: "medical",
-            thumbIndex: 7
+        "AcmarVpo2xE": {
+            title: "The truth about electroconvulsive therapy (ECT)",
+            category: "therapy"
         },
-        "gDwt7dD3awc": {
-            title: "How to help someone having a heart attack",
-            category: "emergency",
-            thumbIndex: 8
+        "wr6fQ4KpbRM": {
+            title: "Why is it so hard to break a bad habit?",
+            category: "wellness"
         },
-        "Ovsw7tdneqE": {
-            title: "What to do if someone has a seizure",
-            category: "medical",
-            thumbIndex: 9
+        "IzFObkVRSV0": {
+            title: "What causes panic attacks, and how can you prevent them?",
+            category: "wellness"
         },
-        "61urGQrmeNM": {
-            title: "How to treat shock",
-            category: "emergency",
-            thumbIndex: 10
+        "ClPVJ25Ka4k": {
+            title: "How do antidepressants work?",
+            category: "therapy"
         },
-        "Uqy2IUhYkVA": {
-            title: "What to do if someone has a spinal injury",
-            category: "injuries",
-            thumbIndex: 11
+        "x2Q_kYyCH9Q": {
+            title: "4 signs of emotional abuse",
+            category: "psychology"
         },
-        "a4cIFZx1f2E": {
-            title: "How to help someone with a head injury",
-            category: "injuries",
-            thumbIndex: 12
+        "3Bax8ijH038": {
+            title: "Why are eating disorders so hard to treat?",
+            category: "disorders"
         },
-        "2v8vlXgGXwE": {
-            title: "How to treat a fracture",
-            category: "injuries",
-            thumbIndex: 13
+        "iNyUmbmQQZg": {
+            title: "Is it normal to talk to yourself?",
+            category: "psychology"
         },
-        "fKzdiuseEIw": {
-            title: "How to bandage a hand",
-            category: "techniques",
-            thumbIndex: 14
+        "K2sc_ck5BZU": {
+            title: "What is schizophrenia?",
+            category: "disorders"
         },
-        "0jps5SZlTdo": {
-            title: "How to bandage a sprain",
-            category: "techniques",
-            thumbIndex: 15
+        "9xf1T7-t1ak": {
+            title: "5 philosophers on anger",
+            category: "psychology"
         },
-        "4e7evinsfm0": {
-            title: "How to treat cuts and grazes",
-            category: "injuries",
-            thumbIndex: 16
+        "hBC7i-vHWsU": {
+            title: "What causes addiction, and why is it so hard to treat?",
+            category: "disorders"
         },
-        "PwfBGkBXkFA": {
-            title: "How to make a sling",
-            category: "techniques",
-            thumbIndex: 17
+        "m4Ics03xzUQ": {
+            title: "How to increase your happiness",
+            category: "wellness"
         },
-        "PHrrxe3p8vw": {
-            title: "How to treat an eye injury",
-            category: "injuries",
-            thumbIndex: 18
+        "w3d2DlLX7xw": {
+            title: "One of the most controversial medical procedures in history",
+            category: "therapy"
         },
-        "L06DNMRcy98": {
-            title: "What to do in a diabetic emergency",
-            category: "medical",
-            thumbIndex: 19
+        "kD3-DKkiVeA": {
+            title: "Why you feel stuck — and how to get motivated",
+            category: "wellness"
         },
-        "UFvL7wTFzl0": {
-            title: "How to use a defibrillator",
-            category: "techniques",
-            thumbIndex: 20
-        },
-        "GmqXqwSV3bo": {
-            title: "The recovery position",
-            category: "techniques",
-            thumbIndex: 21
+        "arJLy3hX1E8": {
+            title: "The psychology of narcissism",
+            category: "psychology"
         }
     };
-    
-    // Track window resize
+
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
-        
+
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-    // Handle keyboard events for accessibility
     useEffect(() => {
         const handleEsc = (event) => {
             if (event.keyCode === 27) closeVideo();
         };
-        
+
         window.addEventListener('keydown', handleEsc);
         return () => {
             window.removeEventListener('keydown', handleEsc);
         };
     }, []);
-    
+
+    const getYouTubeThumbnail = (videoId) => {
+        return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+    };
+
     const getEmbedUrl = (videoId) => {
         return `https://www.youtube.com/embed/${videoId}`;
     };
-    
+
     const handleVideoClick = (videoId) => {
         setOpenVideo(videoId);
         document.body.style.overflow = 'hidden';
     };
-    
+
     const closeVideo = () => {
         setOpenVideo(null);
         document.body.style.overflow = 'auto';
     };
-    
+
     const handleCategoryChange = (category) => {
         setActiveCategory(category);
     };
-    
+
     const handleSearch = (e) => {
         setSearchQuery(e.target.value.toLowerCase());
     };
-    
+
     // Filter videos based on category and search query
     const filteredVideos = Object.entries(videos).filter(([_, video]) => {
         const matchesCategory = activeCategory === 'all' || video.category === activeCategory;
@@ -186,28 +163,28 @@ function FirstAid() {
                 <Navbar />
                 <div className="firstaid-detail">
                     <div className="firstaid-head">
-                        First Aid
+                        Mental Help
                     </div>
                     <div className="firstaid-body">
-                        Keep your first aid skills fresh with our first aid videos and learn how to do first aid.
+                        Watch, breathe, and heal — empowering videos for your mental wellness journey.
                     </div>
-                    
+
                     {/* Search bar */}
                     <div className="search-container">
                         <input
                             type="text"
-                            placeholder="Search first aid videos..."
+                            placeholder="Search videos..."
                             value={searchQuery}
                             onChange={handleSearch}
                             className="search-input"
-                            aria-label="Search first aid videos"
+                            aria-label="Search videos"
                         />
                     </div>
-                    
+
                     {/* Category tabs */}
                     <div className="category-tabs">
                         {Object.entries(categories).map(([key, label]) => (
-                            <div 
+                            <div
                                 key={key}
                                 className={`category-tab ${activeCategory === key ? 'active' : ''}`}
                                 onClick={() => handleCategoryChange(key)}
@@ -217,7 +194,7 @@ function FirstAid() {
                         ))}
                     </div>
                 </div>
-                
+
                 <div className="firstaid-vidgrid">
                     {filteredVideos.length > 0 ? (
                         filteredVideos.map(([videoId, video]) => (
@@ -227,12 +204,12 @@ function FirstAid() {
                                 onClick={() => handleVideoClick(videoId)}
                             >
                                 <div className="thumbnail">
-                                    <img 
-                                        src={`/firstaid-vid-thumbs/${video.thumbIndex}.webp`} 
+                                    <img
+                                        src={getYouTubeThumbnail(videoId)}
                                         alt={`Thumbnail for ${video.title}`}
                                         loading="lazy"
                                         onError={(e) => {
-                                            e.target.src = "/firstaid-vid-thumbs/placeholder.jpg";
+                                            e.target.src = `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
                                         }}
                                     />
                                 </div>
@@ -249,8 +226,8 @@ function FirstAid() {
                 {openVideo && (
                     <div className="video-popover-overlay" onClick={closeVideo}>
                         <div className="video-popover-content" onClick={(e) => e.stopPropagation()}>
-                            <button 
-                                className="video-popover-close" 
+                            <button
+                                className="video-popover-close"
                                 onClick={closeVideo}
                                 aria-label="Close video"
                             >×</button>

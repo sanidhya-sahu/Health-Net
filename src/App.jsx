@@ -3,6 +3,7 @@ import Navbar from './components/navbar/navbar'
 import Home from './components/home/home'
 import Chat from './components/chat/chat'
 import Firstaid from './components/firstaid/firstaid'
+import Mental from './components/mental/mental'
 import HospitalLocator from './components/Nearby_Hospitals/Hospitals'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Footer from './components/Footer/Footer'
@@ -25,6 +26,7 @@ function App() {
           }
         ></Route>
         <Route path="/first-aid" element={<Firstaid/>} ></Route>
+        <Route path="/mental-help" element={<Mental/>} ></Route>
         <Route path="/nearby-hospitals" element={<HospitalLocator/>} ></Route>
       </Routes>
     </Router>

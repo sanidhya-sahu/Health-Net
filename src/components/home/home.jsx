@@ -121,7 +121,7 @@ function Home() {
                     <div className="arrow"><img src={arrowSvg} alt="Arrow" /></div>
                 </div>
                 
-                <div className="serviceBox serviceBox3">
+                <div className="serviceBox serviceBox3" onClick={() => {navigate('/mental-help')}} >
                     <div className="serviceSvg"><img src={mentalSvg} alt="Mental health icon" /></div>
                     <div>
                         <div className="serviceName">Mental health help</div>
