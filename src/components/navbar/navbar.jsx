@@ -37,14 +37,14 @@ function Navbar() {
         </div>
         
         <div className={`center ${menuOpen ? 'active' : ''}`}>
-            <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Services</a>
-            <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  How it Works</a>
-            <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Contact</a>
-            <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  About</a>
+            <a onClick={() => navigate('/mental-help')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Mental help</a>
+            <a href='#' onClick={() => navigate('/first-aid')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  First Aid</a>
+            <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Workout Plans</a>
+            <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Nearby Hospitals</a>
         </div>
         
         <div className="right">
-            <button id='login'>Login</button>
+            {/* <button id='login'>Login</button> */}
             <button id='emergency'>Emergency</button>
         </div>
         <div className="emergencyIcon" hidden={isMobile?false:true}><img src={emergency} alt="" /></div>

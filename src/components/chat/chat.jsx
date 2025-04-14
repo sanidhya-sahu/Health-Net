@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import './chat.css'
 import Loader from '../loader/loader'
+import { marked } from 'marked';
+
 function chat() {
   function bindKey() {
     document.addEventListener('keydown', (e) => {
@@ -37,28 +39,44 @@ function chat() {
             </div>
           `;
         }
+        // else if (data.status == "success") {
+        //   document.getElementById("response").innerHTML = `
+        //     <div class="medicine-info">
+        //       <div class="info-row">
+        //         <span class="info-label">Medicine Name</span>
+        //         <span class="info-value">${data.data.medicine}</span>
+        //       </div>
+        //       <div class="info-row">
+        //         <span class="info-label">Composition</span>
+        //         <span class="info-value">${data.data.composition}</span>
+        //       </div>
+        //       <div class="info-row">
+        //         <span class="info-label">AI Analysis</span>
+        //         <span class="info-value">${data.data.analysis}</span>
+        //       </div>
+        //     </div>
+        //   `;
+        // }
         else if (data.status == "success") {
+          const formattedAnalysis = marked.parse(data.data.analysis);
           document.getElementById("response").innerHTML = `
             <div class="medicine-info">
               <div class="info-row">
                 <span class="info-label">Medicine Name</span>
-                <span class="info-value">${data.medicine_name}</span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Uses</span>
-                <span class="info-value">${data.uses}</span>
+                <span class="info-value">${data.data.medicine}</span>
               </div>
               <div class="info-row">
                 <span class="info-label">Composition</span>
-                <span class="info-value">${data.composition}</span>
+                <span class="info-value">${data.data.composition}</span>
               </div>
               <div class="info-row">
-                <span class="info-label">Side Effects</span>
-                <span class="info-value">${data.side_effects}</span>
+                <span class="info-label">AI Analysis</span>
+                <div class="info-value">${formattedAnalysis}</div>
               </div>
             </div>
           `;
         }
+        
       })
       .catch(err => { console.log(err) });
   }

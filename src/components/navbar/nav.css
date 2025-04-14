@@ -54,6 +54,7 @@
     color: white;
     text-decoration: none;
     transition: opacity 0.2s ease;
+    cursor: pointer;
 }
 
 .nav>.center>a:hover {

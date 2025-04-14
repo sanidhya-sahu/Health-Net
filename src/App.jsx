@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/navbar/navbar'
 import Home from './components/home/home'
 import Chat from './components/chat/chat'
+import Skin from './components/Skin/Skin'
 import Firstaid from './components/firstaid/firstaid'
 import Mental from './components/mental/mental'
 import HospitalLocator from './components/Nearby_Hospitals/Hospitals'
@@ -27,6 +28,7 @@ function App() {
         ></Route>
         <Route path="/first-aid" element={<Firstaid/>} ></Route>
         <Route path="/mental-help" element={<Mental/>} ></Route>
+        <Route path="/skin-disease" element={<Skin/>} ></Route>
         <Route path="/nearby-hospitals" element={<HospitalLocator/>} ></Route>
       </Routes>
     </Router>
