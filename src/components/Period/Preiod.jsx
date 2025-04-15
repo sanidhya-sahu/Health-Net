@@ -43,7 +43,7 @@ function PeriodTrackerContent() {
   const fetchCycles = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost/api/cycles', {
+      const response = await fetch('http://127.0.0.1/api/cycles', {
         headers: {
           ...getAuthHeader(),
         },
@@ -64,7 +64,7 @@ function PeriodTrackerContent() {
 
   const addCycle = async (cycleData) => {
     try {
-      const response = await fetch('http://localhost/api/cycles', {
+      const response = await fetch('http://127.0.0.1/api/cycles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ function PeriodTrackerContent() {
 
   const updateCycle = async (id, cycleData) => {
     try {
-      const response = await fetch(`http://localhost/cycles/${id}`, {
+      const response = await fetch(`http://127.0.0.1/cycles/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ function PeriodTrackerContent() {
 
   const deleteCycle = async (id) => {
     try {
-      const response = await fetch(`http://localhost/api/cycles/${id}`, {
+      const response = await fetch(`http://127.0.0.1/api/cycles/${id}`, {
         method: 'DELETE',
         headers: {
           ...getAuthHeader(),
