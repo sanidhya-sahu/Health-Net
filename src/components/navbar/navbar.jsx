@@ -38,8 +38,8 @@ function Navbar() {
         
         <div className={`center ${menuOpen ? 'active' : ''}`}>
             <a onClick={() => navigate('/mental-help')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Mental help</a>
-            <a href='#' onClick={() => navigate('/first-aid')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  First Aid</a>
-            <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Workout Plans</a>
+            <a onClick={() => navigate('/first-aid')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  First Aid</a>
+            <a onClick={() => navigate('/yoga')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Yoga & Fitness</a>
             <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Nearby Hospitals</a>
         </div>
         
