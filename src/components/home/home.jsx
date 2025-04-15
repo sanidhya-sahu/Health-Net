@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './home.css'
 import arrowSvg from '../../assets/arrow.svg'
 import pharmacySvg from '../../assets/pharmacy.svg'
-import chatSvg from '../../assets/chat.svg'
+import period from '../../assets/period.svg'
 import mentalSvg from '../../assets/mental.svg'
 import videoSvg from '../../assets/video.svg'
 import yoga from '../../assets/yoga.svg'
@@ -43,11 +43,11 @@ function Home() {
             </div>
             
             <div className="services">
-                <div className="serviceBox serviceBox1">
-                    <div className="serviceSvg"><img src={pharmacySvg} alt="Pharmacy icon" /></div>
+                <div className="serviceBox serviceBox1" onClick={() => {navigate('/period')}}>
+                    <div className="serviceSvg"><img src={period} alt="Period icon" /></div>
                     <div>
                         <div className="serviceName">Period Tracker</div>
-                        <div className="serviceDetails">Get closest pharmacy details.</div>
+                        <div className="serviceDetails">Track your menstrual cycle</div>
                     </div>
                     <div className="arrow"><img src={arrowSvg} alt="Arrow" /></div>
                 </div>
@@ -56,7 +56,7 @@ function Home() {
                     <div className="serviceSvg"><img src={videoSvg} alt="Video icon" /></div>
                     <div>
                         <div className="serviceName">Videos for First-Aid</div>
-                        <div className="serviceDetails">Detailed videos for various first-aid.</div>
+                        <div className="serviceDetails">Detailed videos for various first-aid</div>
                     </div>
                     <div className="arrow"><img src={arrowSvg} alt="Arrow" /></div>
                 </div>
@@ -74,7 +74,7 @@ function Home() {
                     <div className="serviceSvg"><img src={yoga} alt="Chat icon" /></div>
                     <div>
                         <div className="serviceName">Yoga & Physical Health</div>
-                        <div className="serviceDetails">Breathe, stretch, and balance.</div>
+                        <div className="serviceDetails">Breathe, stretch, and balance</div>
                     </div>
                     <div className="arrow"><img src={arrowSvg} alt="Arrow" /></div>
                 </div>

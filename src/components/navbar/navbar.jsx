@@ -4,7 +4,7 @@ import menu from '../../assets/menu.svg'
 import cancle from '../../assets/cancle.svg'
 import emergency from '../../assets/emergency.svg'
 import { useNavigate } from "react-router-dom";
-function Navbar() {
+function Navbar(params) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ function Navbar() {
 
   return (
     <div className='navWrap'>
-      <div className="nav">
+      <div className={`nav ${params.theme == "pink" ? "pink" : ""}`}>
         <div className="navHead" onClick={()=>{navigate('/')}}>
             <span>H</span>ealth Net
         </div>
@@ -45,7 +45,7 @@ function Navbar() {
         
         <div className="right">
             {/* <button id='login'>Login</button> */}
-            <button id='emergency'>Emergency</button>
+            <button id='emergency' className={`emergency ${params.theme == "pink" ? "whiteBut" : ""}`} >Emergency</button>
         </div>
         <div className="emergencyIcon" hidden={isMobile?false:true}><img src={emergency} alt="" /></div>
         <button className="mobile-menu-button" onClick={toggleMenu}>

@@ -12,6 +12,7 @@
     transition: all 0.3s ease-in-out;
 }
 
+
 .nav {
     background-color: #25434d;
     width: 90vw;
@@ -26,7 +27,9 @@
     font-family: "Montserrat";
     transition: all 0.3s ease-in-out;
 }
-
+.pink{
+    background-color: #d35698;
+}
 .navHead{
     font-size: 20px;
     cursor: pointer;
@@ -85,7 +88,7 @@
     font-size: 16px;
 }
 
-#emergency{
+.emergency{
     border: none;
     background-color: #a6e9e0;
     border-radius: 20px;
@@ -96,8 +99,11 @@
     font-size: 16px;
     transition: background-color 0.2s ease;
 }
+.whiteBut{
+    background-color: white;
+}
 
-#emergency:active{
+.emergency:active{
     background-color: #86ebdd;
 }
 
@@ -206,7 +212,7 @@
         font-size: 14px;
     }
     
-    #emergency {
+    .emergency {
         padding: 8px;
         font-size: 14px;
     }
@@ -243,7 +249,10 @@
         display: none;
     }
     
-    #emergency {
+    .emergency {
         display: none;
     }
 }
+
+
+

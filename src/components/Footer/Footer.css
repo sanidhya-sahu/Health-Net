@@ -5,6 +5,10 @@
     font-family: "Montserrat";
 }
 
+.pink{
+    background-color: #d35698;
+}
+
 .footer-container {
     display: flex;
     flex-wrap: wrap;
@@ -126,6 +130,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 
+
 .footerhead{
     color: #a6e9e0;
     font-size: 25px;
@@ -134,7 +139,7 @@
     font-size: 50px;
 }
 
-.footer-links-section > h3{
+.footerH3{
     color: #a6e9e0;
 }
 .footersvg{
@@ -146,4 +151,9 @@
 }
 .social-icon:hover {
     background-color: #a6e9e0;
+}
+
+
+.FwhiteBut{
+    color: white;
 }

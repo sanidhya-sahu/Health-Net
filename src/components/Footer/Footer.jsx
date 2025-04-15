@@ -5,7 +5,7 @@ import linkedin from '../../assets/linkedin.svg'
 import insta from '../../assets/insta.svg'
 import x from '../../assets/x.svg'
 
-const Footer = () => {
+const Footer = (params) => {
     const [isMobile, setIsMobile] = useState(false);
     useEffect(() => {
         const handleResize = () => {
@@ -24,10 +24,10 @@ const Footer = () => {
         };
     }, []);
     return (
-        <footer className="footer">
+        <footer className={`footer ${params.theme == "pink" ? "pink" : ""}`}>
             <div className="footer-container">
                 <div className="footer-brand">
-                    <div className="navHead footerhead">
+                    <div className={`navHead footerhead ${params.theme == "pink" ? "FwhiteBut" : ""}`}>
                         <span>H</span>ealth Net
                     </div>
                     <p className="footer-tagline">
@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-links-section">
-                    <h3>Product</h3>
+                    <h3 className={` footerH3 ${params.theme == "pink" ? "FwhiteBut" : ""}`} >Product</h3>
                     <ul className="footer-links">
                         <li><a href="#">Overview</a></li>
                         <li><a href="#">Features</a></li>
@@ -55,7 +55,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-links-section">
-                    <h3>Company</h3>
+                    <h3 className={` footerH3 ${params.theme == "pink" ? "FwhiteBut" : ""}`} >Company</h3>
                     <ul className="footer-links">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Careers</a></li>
@@ -65,7 +65,7 @@ const Footer = () => {
 
 
                 <div className="footer-links-section">
-                    <h3>Legal</h3>
+                    <h3 className={` footerH3 ${params.theme == "pink" ? "FwhiteBut" : ""}`} >Legal</h3>
                     <ul className="footer-links">
                         <li><a href="#">Cookies Policy</a></li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-links-section">
-                    <h3>Contact</h3>
+                    <h3 className={` footerH3 ${params.theme == "pink" ? "FwhiteBut" : ""}`} >Contact</h3>
                     {/* <p>contact@healthnet.com</p> */}
                     <br />
                     <p>(+91) 9552875504</p>
