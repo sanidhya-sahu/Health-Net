@@ -43,7 +43,7 @@ function PeriodTrackerContent() {
   const fetchCycles = async () => {
     try {
       setLoading(true);
-      const response = await fetch('https://health-net-2egp.vercel.app/api/cycles', {
+      const response = await fetch('http://localhost/api/cycles', {
         headers: {
           ...getAuthHeader(),
         },
@@ -64,7 +64,7 @@ function PeriodTrackerContent() {
 
   const addCycle = async (cycleData) => {
     try {
-      const response = await fetch('https://health-net-2egp.vercel.app/api/cycles', {
+      const response = await fetch('http://localhost/api/cycles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ function PeriodTrackerContent() {
 
   const updateCycle = async (id, cycleData) => {
     try {
-      const response = await fetch(`https://health-net-2egp.vercel.app/cycles/${id}`, {
+      const response = await fetch(`http://localhost/cycles/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
