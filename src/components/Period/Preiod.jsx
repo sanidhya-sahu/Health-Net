@@ -107,7 +107,7 @@ function PeriodTrackerContent() {
 
   const deleteCycle = async (id) => {
     try {
-      const response = await fetch(`https://health-net-2egp.vercel.app/cycles/${id}`, {
+      const response = await fetch(`http://localhost/api/cycles/${id}`, {
         method: 'DELETE',
         headers: {
           ...getAuthHeader(),
