@@ -12,7 +12,11 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'; // Use environme
 
 app.use(cors());
 app.use(bodyParser.json());
-
+app.use(cors({
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow these HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Allow these headers
+}));
 // Data storage paths
 const dataPath = path.join(__dirname, 'data');
 const cyclesFile = path.join(dataPath, 'cycles.json');
