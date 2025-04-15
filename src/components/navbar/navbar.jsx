@@ -40,12 +40,12 @@ function Navbar(params) {
             <a onClick={() => navigate('/mental-help')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Mental help</a>
             <a onClick={() => navigate('/first-aid')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  First Aid</a>
             <a onClick={() => navigate('/yoga')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Yoga & Fitness</a>
-            <a href='#' onClick={() => isMobile && setMenuOpen(false)}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Nearby Hospitals</a>
+            <a onClick={() => navigate('/period')}> <span hidden={isMobile?false:true} >▢&nbsp;&nbsp;</span>  Period Tracker</a>
         </div>
         
-        <div className="right">
+        <div className="right" >
             {/* <button id='login'>Login</button> */}
-            <button id='emergency' className={`emergency ${params.theme == "pink" ? "whiteBut" : ""}`} >Emergency</button>
+            <button onClick={() => navigate('/nearby-hospitals')} id='emergency' className={`emergency ${params.theme == "pink" ? "whiteBut" : ""}`} >Emergency</button>
         </div>
         <div className="emergencyIcon" hidden={isMobile?false:true}><img src={emergency} alt="" /></div>
         <button className="mobile-menu-button" onClick={toggleMenu}>

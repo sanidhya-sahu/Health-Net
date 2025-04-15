@@ -52,11 +52,11 @@ function Home() {
                     <div className="arrow"><img src={arrowSvg} alt="Arrow" /></div>
                 </div>
                 
-                <div className="serviceBox serviceBox2" onClick={() => {navigate('/first-aid')}} id='frist-aid-box'>
+                <div className="serviceBox serviceBox2" onClick={() => {navigate('/skin-disease')}} id='frist-aid-box'>
                     <div className="serviceSvg"><img src={videoSvg} alt="Video icon" /></div>
                     <div>
-                        <div className="serviceName">Videos for First-Aid</div>
-                        <div className="serviceDetails">Detailed videos for various first-aid</div>
+                        <div className="serviceName">Skin Disease Detection</div>
+                        <div className="serviceDetails">Detect your skin disease</div>
                     </div>
                     <div className="arrow"><img src={arrowSvg} alt="Arrow" /></div>
                 </div>
