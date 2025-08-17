@@ -5,7 +5,6 @@ HealthNet is an AI-powered platform designed to make healthcare accessible, reli
 ## Implemented Features
 - Medicine check up caht bot
 - First Aid Help
-## Upcoming Features
 - Mental health help
 - Emergency contact to nearest hospital
 - Skin disease prediction by ML
