@@ -62,7 +62,7 @@ function SkinDiseaseDetector() {
             const formData = new FormData();
             formData.append('file', selectedImage);
 
-            const response = await fetch('https://0fc5-2409-40c4-e4-944f-9d6-249b-9fde-1c3b.ngrok-free.app/predict', {
+            const response = await fetch('https://skin-disease-prediction-api.vercel.app/predict', {
                 method: 'POST',
                 body: formData,
             });
