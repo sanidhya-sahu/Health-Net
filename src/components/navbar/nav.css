@@ -58,6 +58,8 @@
     text-decoration: none;
     transition: opacity 0.2s ease;
     cursor: pointer;
+    font-weight: 500;
+     padding: 10px;
 }
 
 .nav>.center>a:hover {
