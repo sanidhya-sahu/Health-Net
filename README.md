@@ -12,4 +12,3 @@ HealthNet is an AI-powered platform designed to make healthcare accessible, reli
 - Workout plans for physical health
 - Menstrual cycle tracker
 
-## collaboraters : @Alden1616
